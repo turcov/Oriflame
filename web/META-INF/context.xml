@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context antiJARLocking="true" path="/OriflameGit">
+  <Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" maxActive="100" maxIdle="30" maxWait="10000" name="jdbc/oriflame" password="free" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/oriflame?useUnicode=true&amp;characterEncoding=UTF8" username="root"/>
+</Context>
+<!--( "jdbc:mysql://localhost/oriflame?useUnicode=true&characterEncoding=UTF8&character_set_client=UTF8&character_set_database=UTF8&character_set_results=UTF8&character_set_server=UTF8&character_set_system=UTF8"-->

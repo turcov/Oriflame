@@ -1,0 +1,193 @@
+<html>
+    <head>
+        <title>JS Demo Page</title>
+        <script>
+            function arataDataCurenta() {
+                document.getElementById("dateshow").innerHTML = Date() + "JORA in actiune! JS funtia ONE!        "+document.getElementById("dateshow").innerHTML;
+                
+            }
+
+            function scrieH1sauH2PaginaNoua() {
+                document.write("<H1>H1 text scris din JS</H1>");
+                document.write("<H2>H2 text scris din JS</H2>");
+            }
+
+
+            function scrieH1sauH2() {
+//                document.getElementById("h1h2show").innerHTML = ("<H1>H1 text scris din JS</H1>");
+                document.getElementById("h1h2show2").innerHTML = ("<H2>H2 text scris din JS</H2>");
+            }
+
+            function schimbaBecul() {
+                elementulSelectat = document.getElementById("becId");
+                if (elementulSelectat.src.match("becstins")) {  /* fara extensie!!! */
+                    elementulSelectat.src = "images/becaprins.gif";
+                } else {
+                    elementulSelectat.src = "images/becstins.gif";
+                }
+            }
+
+            function schimbaCssId() {
+                elementulSelectat = document.getElementById("showaltcssid");
+//                elementulSelectat.style.color = "#aaccff";
+//                elementulSelectat.style.color = "color(0, 0, 255)";
+        elementulSelectat.style.fontSize = "xx-large";         
+        elementulSelectat.style.color = "rgba(255,100,222,100)";
+                 
+
+            }
+
+            function showTextFieldValue() {
+                elementulSelectat = document.getElementById("showtextfield");
+                alert('ai introdus textul=' + elementulSelectat.value);
+            }
+
+            function showTextFieldValueValidat() {
+                var x = document.getElementById("showtextfield").value;
+
+                if (x == "" || isNaN(x)) {
+                    alert('numeric se cere, dar ai introdus gresit textul=' + elementulSelectat.value);
+                } else {
+                    alert('ai introdus textul 22 =' + elementulSelectat.value);
+                }
+            }
+
+            function arataElementeTablou() {
+                element = document.getElementById("arataelementetablou");
+                var tablou = ["aaaaaa", "bbbbbb", "cccccc"];//${tablou}
+                element.innerHTML = "<br/>";
+                for (i = 0; i < tablou.length; i++) {
+                    element.innerHTML += tablou[i] + "<br/>";
+                }
+
+            }
+
+            function nouAarataElementeTablouInOrderLista() {
+                element = document.getElementById("arataelementetablou");
+                var tablou = new Array();
+                tablou[0] = "XXX";
+                tablou[1] = "YYY";
+                tablou[2] = "ZZZ";
+
+                var ll = "";
+
+                for (i = 0; i < tablou.length; i++) {
+                    ll += "<li>" + tablou[i] + "</li>";
+                }
+
+                var z = "<OL>" + ll + "</OL>";
+                element.innerHTML = z + "<br/>";
+
+            }
+
+            function arataPersonObject() {
+                var person = {firstname: "iura", lastname: "coro", site:"http://iucosoft.com"};
+                element = document.getElementById("showPerson");
+                element.innerHTML = person.firstname + " : " + person.lastname+" : " +person.site ;
+            }
+
+
+            function altAarataPersonObjectNou() {
+                var PersonClass = new Object();
+                PersonClass.firstname = "iuname";
+                PersonClass.lastname = "iunamelast";
+                PersonClass.id = 12345678;
+
+                var person1 = PersonClass;
+
+                element = document.getElementById("altShowPersonObject");
+                // element.innerHTML=PersonClass.id;
+                element.innerHTML = person1.firstname + " : " + person1.lastname + " : " + person1.id;
+
+
+            }
+
+
+            /*
+             function showM{
+             var M={
+             var n=44;
+             var k=55;
+             
+             function showN(){
+             alert(n);
+             }
+             
+             function showM(){
+             alert(m);
+             }
+             }
+             var m=new M();
+             m.showN();
+             m.showM();
+             }
+             
+             */
+
+            function showDocSite() {
+
+
+                elementulSelectat = document.getElementById("showDocID");
+                        elementulSelectat.innerHTML = window.location.assign("http://iucosoft.com");
+
+            }
+
+        </script>
+    </head>
+
+    <body>
+        <p id="dateshow">acesta este un text in "p". Aici va fi aratata date dupa apasarea pe butonul de mai jos </p>
+        <input type="button" onclick="arataDataCurenta()" value="Arata Data curenta in textul de mai sus" /><br/> <hr/>
+
+        <p id="h1h2show">acesta este un text in "p". Aici va NU fi aratata texte cu h1 si h2 dupa apasarea pe butonul de mai jos/ sau o pagina noua daca e document.write("ceva scris aici")</p>
+        <input type="button" onclick="scrieH1sauH2PaginaNoua()" value="Arata text cu h1 su h2 in textul de mai sus" /><br/> <hr/>
+
+        <p id="h1h2show2">acesta este un text in "p". Aici va fi aratata texte cu h1 si h2 dupa apasarea pe butonul de mai jos fiindca filoseste eleentById</p>
+        <input type="button" onclick="scrieH1sauH2()" value="Arata text cu h1 su h2 in textul de mai sus" /><br/> <hr/>
+
+        <p >acesta este un text in "p".uita-te mai jos</p>
+
+
+        <input type="button" onclick="alert('Ai apasat aici, textul din fereastra')" value="Pe buton scrie: Arata text in fereasctra alert" /><br/> <hr/>
+        <input type="button" onclick="alert('Ai apasat aici, a 2-a oara!!')" value="Pe buton scrie: 2!!!" /><br/> <hr/>
+
+        <p >Demo schimbare imagine.uita-te mai jos</p>
+        <img src="images/becstins.gif" width="100px" height="180px" alt="aici ar fi un bec"  id="becId" onclick="schimbaBecul()" /><br/> <hr/>
+
+
+        <p id="showaltcssid">acesta este un text in "p". Aici va fi aratata cum textul isi schimba css id la click pe butonul de mai jos</p>
+        <input type="button" onclick="schimbaCssId()" value="Arata text cu al css id" /><br/> <hr/>
+
+
+        <p >acesta este un text in "p". Aici va fi aratata cum textul DIN TEXT FIELD la click pe butonul de mai jos</p>
+        <input type="text" value="Arata text din textfield" id="showtextfield" /><br/> 
+        <input type="button" onclick="showTextFieldValue()" value="Arata text din textfield" />
+        <input type="button" onclick="showTextFieldValueValidat()" value="Arata text din textfield cu validare NUMERIC" /><br/> <hr/>
+
+        <p id="arataelementetablou">acesta este un text in "p". Aici va fi aratata cum textul DIN TABLOU la click pe butonul de mai jos</p>
+        <input type="button" onclick="arataElementeTablou()" value="Arata text din tablou JS aa bb cc" id="bt1" />
+        <input type="button" onclick="nouAarataElementeTablouInOrderLista()" value="Arata text din tablou JS inm OL" id="bt2" />
+        <br/> <hr/>
+
+
+        <p id="showPerson">acesta este un text in "p". Aici va fi aratata cum textul DIN JS Object Person ca VAR - la click pe butonul de mai jos</p>
+        <input type="button" onclick="arataPersonObject()" value="Arata text din JS person" id="bt3" />
+        <br/> <hr/>
+
+        <p id="altShowPersonObject">acesta este un text in "p". Aici va fi aratata cum textul DIN JS Object Person - la click pe butonul de mai jos</p>
+        <input type="button" onclick="altAarataPersonObjectNou()" value="Arata text din JS person aparte ca Object cu instanta" id="bt4" />
+        <br/> <hr/>
+
+
+        <p id="showMObject">acesta este un text in "p". Aici va fi aratata cum textul DIN JS Object clasaa M - la click pe butonul de mai jos</p>
+        <input type="button" onclick="showM()" value="Arata text din JS M cu 2 alerte m si n" />
+        <br/> <hr/>
+
+        <p id="showDocID">acesta este un text in "p". Aici va fi aratata cum textul DIN JS ARATA IUCOSOFT page la click pe butonul de mai jos</p>
+        <input type="button" onclick="showDocSite()" value="Arata text din JS iucosooft in div" />
+        <br/> <hr/>
+
+    </body>
+
+
+</html>

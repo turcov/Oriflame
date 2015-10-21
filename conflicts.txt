@@ -1,0 +1,7 @@
+==== Conflict Statistics: =====
+Property conflicts: 1
+==[IDE]== Mar 2, 2015 8:38:02 AM Updating "Oriflame" to HEAD finished.
+==[IDE]== Mar 2, 2015 8:40:57 AM Resolving Conflicts...
+resolve --accept=working D:/Мои документы/NetBeansProjects/EE_projects/Oriflame
+Resolved conflicted state of D:/Мои документы/NetBeansProjects/EE_projects/Oriflame
+==[IDE]== Mar 2, 2015 8:40:59 AM Resolving Conflicts... finished.
